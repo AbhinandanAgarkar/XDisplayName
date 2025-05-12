@@ -5,7 +5,7 @@ function App() {
 
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
-  const [fullname, setFullName] = useState(false)
+  const [fullname, setFullName] = useState("")
 
   const handleFirstNameChange = (e) =>{
     setFirstName(e.target.value)
@@ -19,7 +19,7 @@ function App() {
      event.preventDefault();
 
     if(firstName && lastName){
-      setFullName(true);
+      setFullName(`${firstName} ${lastName}`);
     }
 
  
@@ -56,7 +56,7 @@ function App() {
 
   </form>
   
-  {fullname && <p>Full Name:{firstName} {lastName} </p>}
+  {fullname && <p>Full Name: {fullname} </p>}
   </>
 
   )
